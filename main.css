@@ -1,0 +1,71 @@
+.title {
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
+
+.author {
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+#card1 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+#card2 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#card3 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#card4 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#card5 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+#card6 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+#card7 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+#card8 {
+    width: 10%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 20%;
+}
