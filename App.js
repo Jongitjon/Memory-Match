@@ -33,7 +33,8 @@ var backOfCard = "https://cdn.shopify.com/s/files/1/0200/7616/products/playing-c
 //Array of URLs used to randomly choose an image in Memory Match;
 var arr = [src1,src2,src3,src4,src5,src6,src7,src8];
 
-var rand = Math.floor(Math.random() * 8);
+var randNum = 8
+
 
 //Count is used tell if 1 or 2 cards have been clicked. matchsrc holds the value of the clicked cards to compare.
  var count = 0;
@@ -42,22 +43,72 @@ var rand = Math.floor(Math.random() * 8);
 
 //Back of card changes to Jack,Queen,King or Joker when clicked;
 card1.addEventListener('click', () => {
-    card1.src="https://previews.123rf.com/images/mannaggia/mannaggia1409/mannaggia140900007/32651169-jack-of-hearts-playing-card.jpg";
+    url = Math.floor(Math.random() * randNum);
+    randNum--;
+    card1.src= arr[url];
+    arr.splice(arr.indexOf(url), 1);
+    console.log(arr.length);
+    console.log(card1.src);
+    count++;
+    if (count === 1) {
+        matchSrc = card1.src;
+    } else if (count === 2) {
+        if (card1.src !== matchSrc) {
+            count = 0;
+            reset();
+        }
+        count = 0;
+    }
 })
 
 card2.addEventListener('click', () => {
-    url = rand;
-    card2.src= arr[url];
+    url = Math.floor(Math.random() * randNum);
+    randNum--;
     arr.splice(arr.indexOf(url), 1);
+    console.log(arr.length);
+    console.log(card2.src);
     count++;
     if (count === 1) {
         matchSrc = card2.src;
     } else if (count === 2) {
         if (card2.src !== matchSrc) {
+            count = 0;
             reset();
         }
+        count = 0;
     }
+})
 
+card3.addEventListener('click', () => {
+    url = Math.floor(Math.random() * randNum);
+    randNum--;
+    arr.splice(arr.indexOf(url), 1);
+    count++;
+    if (count === 1) {
+        matchSrc = card3.src;
+    } else if (count === 2) {
+        if (card3.src !== matchSrc) {
+            count = 0;
+            reset();
+        }
+        count = 0;
+    }
+})
+
+card4.addEventListener('click', () => {
+    url = Math.floor(Math.random() * randNum);
+    randNum--;
+    arr.splice(arr.indexOf(url), 1);
+    count++;
+    if (count === 1) {
+        matchSrc = card4.src;
+    } else if (count === 2) {
+        if (card4.src !== matchSrc) {
+            count = 0;
+            reset();
+        }
+        count = 0;
+    }
 })
 
 function reset() {
