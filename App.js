@@ -35,11 +35,28 @@ var arr = [src1,src2,src3,src4,src5,src6,src7,src8];
 
 var randNum = 8
 
+//Holds random Url so it doesn't always change when clicked; holds value for memory match;
+url1 = Math.floor(Math.random() * randNum);
+randNum--;
+url2 = Math.floor(Math.random() * randNum);
+randNum--;
+url3 = Math.floor(Math.random() * randNum);
+randNum--;
+url4 = Math.floor(Math.random() * randNum);
+randNum--;
+url5 = Math.floor(Math.random() * randNum);
+randNum--;
+url6 = Math.floor(Math.random() * randNum);
+randNum--;
+url7 = Math.floor(Math.random() * randNum);
+randNum--;
+url8 = Math.floor(Math.random() * randNum);
 
 //Count is used tell if 1 or 2 cards have been clicked. matchsrc holds the value of the clicked cards to compare.
  var count = 0;
  var matchSrc;
  
+
 
 //Back of card changes to Jack,Queen,King or Joker when clicked;
 card1.addEventListener('click', () => {
@@ -48,8 +65,8 @@ card1.addEventListener('click', () => {
     card1.src= arr[url];
     arr.splice(arr.indexOf(url), 1);
     console.log(arr.length);
-    console.log(card1.src);
     count++;
+    console.log(count);
     if (count === 1) {
         matchSrc = card1.src;
     } else if (count === 2) {
@@ -64,10 +81,11 @@ card1.addEventListener('click', () => {
 card2.addEventListener('click', () => {
     url = Math.floor(Math.random() * randNum);
     randNum--;
+    card2.src= arr[url];
     arr.splice(arr.indexOf(url), 1);
     console.log(arr.length);
-    console.log(card2.src);
     count++;
+    console.log(count);
     if (count === 1) {
         matchSrc = card2.src;
     } else if (count === 2) {
@@ -82,6 +100,7 @@ card2.addEventListener('click', () => {
 card3.addEventListener('click', () => {
     url = Math.floor(Math.random() * randNum);
     randNum--;
+    card3.src= arr[url];
     arr.splice(arr.indexOf(url), 1);
     count++;
     if (count === 1) {
@@ -98,6 +117,7 @@ card3.addEventListener('click', () => {
 card4.addEventListener('click', () => {
     url = Math.floor(Math.random() * randNum);
     randNum--;
+    card4.src= arr[url];
     arr.splice(arr.indexOf(url), 1);
     count++;
     if (count === 1) {
@@ -111,6 +131,7 @@ card4.addEventListener('click', () => {
     }
 })
 
+//reset() changes all card urls back to image back of card;
 function reset() {
     card1.src= backOfCard;
     card2.src= backOfCard;
