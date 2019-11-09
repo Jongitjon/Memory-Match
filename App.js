@@ -26,7 +26,6 @@ var src6 = "https://previews.123rf.com/images/rbwinston/rbwinston1203/rbwinston1
 var src7 = "https://qph.fs.quoracdn.net/main-qimg-f65b1844a0b5682c64f364785ad506b0";
 var src8 = "https://qph.fs.quoracdn.net/main-qimg-f65b1844a0b5682c64f364785ad506b0";
 
-var backsrc = "https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1535755695";
 
 //Image of back of card;
 var backOfCard = "https://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1535755695"
@@ -36,14 +35,8 @@ var arr = [src1,src2,src3,src4,src5,src6,src7,src8];
 
 var rand = Math.floor(Math.random() * 8);
 
-function checkIfFlipped (card) {
-    if (card.src !== backsrc ) {
-
-    }
-
- }
-
- var count;
+//Count is used tell if 1 or 2 cards have been clicked. matchsrc holds the value of the clicked cards to compare.
+ var count = 0;
  var matchSrc;
  
 
@@ -56,10 +49,25 @@ card2.addEventListener('click', () => {
     url = rand;
     card2.src= arr[url];
     arr.splice(arr.indexOf(url), 1);
+    count++;
+    if (count === 1) {
+        matchSrc = card2.src;
+    } else if (count === 2) {
+        if (card2.src !== matchSrc) {
+            reset();
+        }
+    }
+
 })
 
-
-
-/*function reset () {
-    card1.src=
-}*/
+function reset() {
+    card1.src= backOfCard;
+    card2.src= backOfCard;
+    card3.src= backOfCard;
+    card4.src= backOfCard;
+    card5.src= backOfCard;
+    card5.src= backOfCard;
+    card6.src= backOfCard;
+    card7.src= backOfCard;
+    card8.src= backOfCard;
+}
